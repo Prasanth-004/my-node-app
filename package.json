@@ -1,0 +1,27 @@
+{
+  "name": "my-node-app",
+  "version": "1.0.0",
+  "description": "Production Node.js Microservice for ECS Blue/Green Deployment",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage --runInBand"
+  },
+  "keywords": [
+    "aws",
+    "ecs",
+    "fargate",
+    "ci-cd",
+    "github-actions"
+  ],
+  "author": "AWS DevOps Architect",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}

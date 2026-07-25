@@ -15,7 +15,8 @@
           "token.actions.githubusercontent.com:sub": [
             "repo:Prasanth-004/my-node-app:*",
             "repo:prasanth-004/my-node-app:*",
-            "repo:PRASANTH-004/my-node-app:*"
+            "repo:Prasanth-004/my-node-app:ref:refs/heads/*",
+            "repo:prasanth-004/my-node-app:ref:refs/heads/*"
           ]
         }
       }

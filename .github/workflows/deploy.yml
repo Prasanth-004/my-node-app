@@ -47,6 +47,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::351682129477:role/GitHubActionsECSRole
           aws-region: ${{ env.AWS_REGION }}
+          audience: sts.amazonaws.com
       - name: Login to ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
@@ -76,6 +77,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::351682129477:role/GitHubActionsECSRole
           aws-region: ${{ env.AWS_REGION }}
+          audience: sts.amazonaws.com
       - name: Login to ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
@@ -252,6 +254,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::351682129477:role/GitHubActionsECSRole
           aws-region: ${{ env.AWS_REGION }}
+          audience: sts.amazonaws.com
 
       - name: Send SNS notification
         env:

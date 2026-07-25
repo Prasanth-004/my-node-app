@@ -12,7 +12,11 @@
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
         "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:Prasanth-004/my-node-app:*"
+          "token.actions.githubusercontent.com:sub": [
+            "repo:Prasanth-004/my-node-app:*",
+            "repo:prasanth-004/my-node-app:*",
+            "repo:PRASANTH-004/my-node-app:*"
+          ]
         }
       }
     }

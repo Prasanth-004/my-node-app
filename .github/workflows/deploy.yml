@@ -25,8 +25,8 @@ jobs:
     name: Run Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "18"
           cache: "npm"
@@ -41,15 +41,15 @@ jobs:
     outputs:
       image-tag: ${{ steps.build.outputs.image-tag }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActionsECSRole
+          role-to-assume: arn:aws:iam::351682129477:role/GitHubActionsECSRole
           aws-region: ${{ env.AWS_REGION }}
       - name: Login to ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+        uses: aws-actions/amazon-ecr-login@v2
       - name: Build & Push
         id: build
         env:
@@ -70,15 +70,15 @@ jobs:
     outputs:
       deployment-status: ${{ steps.wait-deployment.outputs.status }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActionsECSRole
+          role-to-assume: arn:aws:iam::351682129477:role/GitHubActionsECSRole
           aws-region: ${{ env.AWS_REGION }}
       - name: Login to ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+        uses: aws-actions/amazon-ecr-login@v2
       - name: Register new task definition
         id: register-task
         env:
@@ -248,14 +248,14 @@ jobs:
           fi
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActionsECSRole
+          role-to-assume: arn:aws:iam::351682129477:role/GitHubActionsECSRole
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Send SNS notification
         env:
-          TOPIC_ARN: arn:aws:sns:${{ env.AWS_REGION }}:${{ secrets.AWS_ACCOUNT_ID }}:deployment-notifications
+          TOPIC_ARN: arn:aws:sns:${{ env.AWS_REGION }}:351682129477:deployment-notifications
           MESSAGE: |
             Deployment Status: ${{ steps.status.outputs.status }}
 

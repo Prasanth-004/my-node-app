@@ -22,7 +22,7 @@ app.get("/health", (req, res) => {
 // Home endpoint
 app.get("/", (req, res) => {
   res.json({
-    message: "Siva teja and vivek are working on CI/CD Pipeline",
+    message: "Prasanth and Yashu are working on CI/CD Pipeline",
     version: process.env.APP_VERSION || "1.0.0",
     environment: process.env.NODE_ENV || "development"
   });
@@ -31,8 +31,8 @@ app.get("/", (req, res) => {
 // API endpoint - Get Users
 app.get("/api/users", (req, res) => {
   res.json([
-    { id: 1, name: "John Doe", email: "john@example.com" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com" }
+    { id: 1, name: "Yashu", email: "yashu@example.com" },
+    { id: 2, name: "shusu", email: "shusu@example.com" }
   ]);
 });
 

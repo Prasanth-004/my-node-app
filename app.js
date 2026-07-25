@@ -15,7 +15,7 @@ app.get("/health", (req, res) => {
     status: "healthy",
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || "development",
-    version: process.env.APP_VERSION || "1.0.0"
+    version: process.env.APP_VERSION || "1.0.1"
   });
 });
 

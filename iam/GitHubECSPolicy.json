@@ -23,7 +23,12 @@
     {
       "Effect": "Allow",
       "Action": [
-        "elbv2:DescribeLoadBalancers"
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:DescribeTargetHealth",
+        "elbv2:DescribeLoadBalancers",
+        "elbv2:DescribeTargetGroups",
+        "elbv2:DescribeTargetHealth"
       ],
       "Resource": "*"
     },

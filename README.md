@@ -149,5 +149,4 @@ curl http://localhost:3000/api/users
 
 ## 👥 Authors & Team
 
-- **Prasanth**
-- **Yashu**
+- **Vandana Durga Prasanth** 
